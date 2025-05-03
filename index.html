@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,64 +7,74 @@
   <title>2025 Fight Club Challenge Ladder</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom, #f0f2f5, #ffffff);
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      color: #333;
+      background: #f8f9fa;
+      color: #212529;
     }
     header {
-      background: #2e3b4e;
+      background: #1a237e;
       color: white;
-      padding: 1.5rem 0;
+      padding: 1.5rem;
       text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     h1 {
       margin: 0;
       font-size: 2rem;
     }
-    .container {
+    .bracket-wrapper {
       padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
     }
-    .brackets {
+    .bracket-title {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #1a237e;
+    }
+    .bracket {
       display: flex;
       justify-content: center;
-      gap: 4rem;
-      flex-wrap: wrap;
-    }
-    .flight {
-      background: #ffffff;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      width: 340px;
-      text-align: left;
-    }
-    .flight h2 {
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.5rem;
-      color: #2e3b4e;
+      gap: 2rem;
+      overflow-x: auto;
     }
     .round {
-      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      position: relative;
     }
     .round h3 {
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
-      color: #555;
+      text-align: center;
+      color: #3949ab;
+      margin-bottom: 0.5rem;
     }
     .match {
-      margin-bottom: 0.75rem;
-      padding: 0.5rem;
-      border-left: 4px solid #e0e0e0;
-      background: #fafafa;
+      background: white;
+      border: 1px solid #dee2e6;
       border-radius: 6px;
+      padding: 0.75rem;
+      width: 240px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
-    .winner {
-      font-weight: bold;
-      color: #007b5e;
+    .match.winner {
+      border-left: 5px solid #28a745;
+    }
+    .score {
+      display: block;
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 0.25rem;
+    }
+    .placeholder {
+      color: #999;
+      font-style: italic;
     }
   </style>
 </head>
@@ -71,39 +82,69 @@
   <header>
     <h1>2025 Fight Club Challenge Ladder</h1>
   </header>
-  <div class="container">
-    <div class="brackets">
-      <div class="flight">
-        <h2>Flight A</h2>
+  <div class="bracket-wrapper">
+    <div>
+      <div class="bracket-title">Flight A</div>
+      <div class="bracket">
         <div class="round">
           <h3>Round of 16</h3>
-          <div class="match"><span class="winner">Claes PERSSON (1)</span> def. Mitch SPRENGELMEYER — 6–2, 6–2</div>
-          <div class="match">Augusto BALLESTER (2) vs. David WARREN (15)</div>
-          <div class="match">Greg ARTZT (3) vs. Quinn CARMEAN (14)</div>
-          <div class="match"><span class="winner">Rodrigo PACHECO (13)</span> def. Kavir KUMAR (4) — 6–1, 6–4</div>
-          <div class="match">Anders PERSSON (5) vs. Tim KULLICK (12)</div>
-          <div class="match"><span class="winner">Niclas NILSSON (11)</span> def. Gabriel VEIGA (6) — 7–5, Retired (inj)</div>
-          <div class="match"><span class="winner">Zach CARDAIS (10)</span> def. Caio LIMA (7) — 6–3, 6–1</div>
-          <div class="match"><span class="winner">Fabio MEDINA (8)</span> def. Rob HAYWOOD (9) — 7–5, 1–6, 7–6 (10–5)</div>
+          <div class="match winner">(1) Claes PERSSON <span class="score">6–2, 6–2</span></div>
+          <div class="match winner">(8) Fabio MEDINA <span class="score">7–5, 1–6, 7–6 (10–5)</span></div>
+          <div class="match winner">(13) Rodrigo PACHECO <span class="score">6–1, 6–4</span></div>
+          <div class="match">(5) Anders PERSSON vs. (12) Tim KULLICK</div>
+          <div class="match">(2) Augusto BALLESTER vs. (15) David WARREN</div>
+          <div class="match winner">(10) Zach CARDAIS <span class="score">6–3, 6–1</span></div>
+          <div class="match">(3) Greg ARTZT vs. (14) Quinn CARMEAN</div>
+          <div class="match winner">(11) Niclas NILSSON <span class="score">7–5, Retired (inj)</span></div>
+        </div>
+        <div class="round">
+          <h3>Quarterfinals</h3>
+          <div class="match">Claes PERSSON vs. Fabio MEDINA</div>
+          <div class="match">Rodrigo PACHECO vs. Winner of (5) vs. (12)</div>
+          <div class="match">Winner of (2) vs. (15) vs. Zach CARDAIS</div>
+          <div class="match">Winner of (3) vs. (14) vs. Niclas NILSSON</div>
+        </div>
+        <div class="round">
+          <h3>Semifinals</h3>
+          <div class="match placeholder">TBD</div>
+          <div class="match placeholder">TBD</div>
+        </div>
+        <div class="round">
+          <h3>Final</h3>
+          <div class="match placeholder">TBD</div>
         </div>
       </div>
-      <div class="flight">
-        <h2>Flight B</h2>
-        <div class="round">
-          <h3>Play-in Matches</h3>
-          <div class="match"><span class="winner">Charlie REINEY (16)</span> def. Wells TIEDEMAN (17) — 6–3, 6–2</div>
-          <div class="match"><span class="winner">John DEERING (15)</span> def. Les MCIVER (18) — 7–6 (7–2), 6–3</div>
-        </div>
+    </div>
+
+    <div>
+      <div class="bracket-title">Flight B</div>
+      <div class="bracket">
         <div class="round">
           <h3>Round of 16</h3>
-          <div class="match">John Carpenter (1) vs. Charlie REINEY (16)</div>
-          <div class="match">Ken KOELLING (8) vs. Tommy BEECHER (9)</div>
-          <div class="match">Eric TAN (4) vs. Trip CALDWELL (13)</div>
-          <div class="match">Charles CARPENTER (5) vs. Drew PHILLIPS (12)</div>
-          <div class="match">Blake ELDER vs. John DEERING (15)</div>
-          <div class="match"><span class="winner">Patrick BURNS (10)</span> def. Bryant OWENS (7) — 5–7, 7–5, (10–1)</div>
-          <div class="match">Andy MISIAVEG (3) vs. Stuart SHERRILL (14)</div>
-          <div class="match">David STERN (6) vs. Mehmet KARAKUS (11)</div>
+          <div class="match">(1) John CARPENTER vs. (16) Charlie REINEY</div>
+          <div class="match">(8) Ken KOELLING vs. (9) Tommy BEECHER</div>
+          <div class="match">(4) Eric TAN vs. (13) Trip CALDWELL</div>
+          <div class="match">(5) Charles CARPENTER vs. (12) Drew PHILLIPS</div>
+          <div class="match">(2) Blake ELDER vs. (15) John DEERING</div>
+          <div class="match winner">(10) Patrick BURNS <span class="score">5–7, 7–5, (10–1)</span></div>
+          <div class="match">(3) Andy MISIAVEG vs. (14) Stuart SHERRILL</div>
+          <div class="match">(6) David STERN vs. (11) Mehmet KARAKUS</div>
+        </div>
+        <div class="round">
+          <h3>Quarterfinals</h3>
+          <div class="match placeholder">TBD</div>
+          <div class="match placeholder">TBD</div>
+          <div class="match placeholder">TBD</div>
+          <div class="match placeholder">TBD</div>
+        </div>
+        <div class="round">
+          <h3>Semifinals</h3>
+          <div class="match placeholder">TBD</div>
+          <div class="match placeholder">TBD</div>
+        </div>
+        <div class="round">
+          <h3>Final</h3>
+          <div class="match placeholder">TBD</div>
         </div>
       </div>
     </div>
